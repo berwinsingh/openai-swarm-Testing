@@ -1,4 +1,10 @@
 from swarm import Swarm, Agent
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 client = Swarm()
 
@@ -14,7 +20,7 @@ agent_a = Agent(
 
 agent_b = Agent(
     name="Agent B",
-    instructions="Only speak in Haikus.",
+    instructions="Say 'Hello' to the user and your name is Berwin.",
 )
 
 response = client.run(
